@@ -1,0 +1,49 @@
+curl --location 'http://localhost:4568/profiles'
+
+
+curl --location 'http://localhost:4568/profiles' \
+--header 'Content-Type: application/json' \
+--data '{"id":4,"name":"Virgilio","group":"Group 7","apiCallsMade":null}'
+
+
+curl --location --request PUT 'http://localhost:4568/profiles?name=Emilio%20Aguinaldo' \
+--header 'Content-Type: application/json' \
+--data '{"name":"Antonio Luna","group":"Illustrados"}'
+
+
+curl --location --request PUT 'http://localhost:4568/profiles?name=Emilio%20Aguinaldo' \
+--header 'Content-Type: application/json' \
+--data '{"name":"Antonio Luna","group":"Illustrados"}'
+
+
+
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Jose Rizal",
+            "group": "Illustrados",
+            "apiCallsMade": null
+        },
+        {
+            "id": 3,
+            "name": "Antonio Luna",
+            "group": "Illustrados",
+            "apiCallsMade": null
+        },
+        {
+            "id": 4,
+            "name": "Virgilio",
+            "group": "Group 7",
+            "apiCallsMade": [
+                "GET: /profiles",
+                "POST: /profiles",
+                "PUT: /profiles",
+                "DELETE: /profiles"
+            ]
+        }
+    ],
+    "status": "Success"
+}
+
+
